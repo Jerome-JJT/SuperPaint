@@ -1,0 +1,10 @@
+E:\Documents\_Projets\SuperPaint\SuperPaint\SuperPaint\bin\Debug\SuperPaint.exe.config
+E:\Documents\_Projets\SuperPaint\SuperPaint\SuperPaint\bin\Debug\SuperPaint.exe
+E:\Documents\_Projets\SuperPaint\SuperPaint\SuperPaint\bin\Debug\SuperPaint.pdb
+E:\Documents\_Projets\SuperPaint\SuperPaint\SuperPaint\obj\Debug\SuperPaint.csprojAssemblyReference.cache
+E:\Documents\_Projets\SuperPaint\SuperPaint\SuperPaint\obj\Debug\SuperPaint.FrmColors.resources
+E:\Documents\_Projets\SuperPaint\SuperPaint\SuperPaint\obj\Debug\SuperPaint.Properties.Resources.resources
+E:\Documents\_Projets\SuperPaint\SuperPaint\SuperPaint\obj\Debug\SuperPaint.csproj.GenerateResource.cache
+E:\Documents\_Projets\SuperPaint\SuperPaint\SuperPaint\obj\Debug\SuperPaint.csproj.CoreCompileInputs.cache
+E:\Documents\_Projets\SuperPaint\SuperPaint\SuperPaint\obj\Debug\SuperPaint.exe
+E:\Documents\_Projets\SuperPaint\SuperPaint\SuperPaint\obj\Debug\SuperPaint.pdb
