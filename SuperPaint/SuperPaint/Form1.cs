@@ -26,7 +26,8 @@ namespace SuperPaint
 
         private double distAngle(int thisX, int thisY)
         {
-            if (thisX < 250)
+            return Math.Atan(Math.Abs(thisX) / Math.Abs(thisY)) * (180 / Math.PI);
+            /*if (thisX < 250)
             {
                 if (thisY < 250)
                 {
@@ -56,8 +57,17 @@ namespace SuperPaint
             else
             {
                 return 180;
-            }
+            }*/
         }
+
+        /*private int getR(int thisX, int thisY)
+        {
+            int angle = distAngle(thisX, thisY);
+            if (angle )
+            {
+
+            }
+        }*/
 
         private void FrmColors_Load(object sender, EventArgs e)
         {
@@ -76,8 +86,9 @@ namespace SuperPaint
                 {
                     int r, g, b;
 
-                    r = (int)Math.Abs(Map(distAngle(thisX, thisY) - 180, -180, 180, -255, 255));
-                    g = (int)Math.Abs(Map((distAngle(thisX, thisY) - 120) % 360, -120, 240, -255, 255)); ;
+                    r = (int)Math.Abs(Map(distAngle(thisX, thisY), 0, 360, 255, 0));
+                    g = 0;
+                    //g = (int)Math.Abs(Map((distAngle(thisX, thisY) - 120) % 360, -120, 240, -255, 255)); ;
                     //g = (int)Map(distAngle(thisX, thisY), 120, 300, 255, 0);
                     //b = (int)Math.Abs(Map(distAngle(thisX, thisY) + 60, 60, 420, -255, 255)); ;
                     b = 0;
