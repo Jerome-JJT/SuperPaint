@@ -26,48 +26,73 @@ namespace SuperPaint
 
         private double distAngle(int thisX, int thisY)
         {
-            return Math.Atan(Math.Abs(thisX) / Math.Abs(thisY)) * (180 / Math.PI);
-            /*if (thisX < 250)
+            if (250.0 - thisX < 0)
             {
-                if (thisY < 250)
-                {
-                    return 180 + 90 + (Math.Atan(Math.Abs(250.0 - thisY) / Math.Abs(250 - thisX)) * (180 / Math.PI));
-                }
-                else
-                {
-                    return 180 + (Math.Atan(Math.Abs(250.0 - thisX) / Math.Abs(250 - thisY)) * (180 / Math.PI));
-                }
+                return 90+Math.Atan((250.0 - thisY) / (250.0 - thisX)) * (180 / Math.PI);
             }
-            else if (thisX > 250)
+            else if(250.0 - thisX > 0)
             {
-                if (thisY < 250)
-                {
-                    return (Math.Atan(Math.Abs(250.0 - thisX) / Math.Abs(250 - thisY)) * (180 / Math.PI));
-                }
-                else
-                {
-                    return 90 + (Math.Atan(Math.Abs(250.0 - thisY) / Math.Abs(250 - thisX)) * (180 / Math.PI));
-                }
+                return 270+Math.Atan((250.0 - thisY) / (250.0 - thisX)) * (180 / Math.PI);
             }
-
-            if (thisY < 250)
+            else if (250.0 - thisY < 0)
             {
-                return 0;
+                return 180;
             }
             else
             {
-                return 180;
-            }*/
+                return 0;
+            }
+
+
         }
 
-        /*private int getR(int thisX, int thisY)
+        private int getR(double angle)
         {
-            int angle = distAngle(thisX, thisY);
-            if (angle )
+            if (angle < 60 || angle > 300)
             {
-
+                return 255;
             }
-        }*/
+            else if (angle < 120 || angle > 240)
+            {
+                return (int)Map(Math.Abs(angle - 180), 60, 120, 0, 255);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        private int getG(double angle)
+        {
+            if (angle < 60 || angle > 300)
+            {
+                return 255;
+            }
+            else if (angle < 120 || angle > 240)
+            {
+                return (int)Map(Math.Abs(angle - 180), 60, 120, 0, 255);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        private int getB(double angle)
+        {
+            if (angle < 60 || angle > 300)
+            {
+                return 255;
+            }
+            else if (angle < 120 || angle > 240)
+            {
+                return (int)Map(Math.Abs(angle - 180), 60, 120, 0, 255);
+            }
+            else
+            {
+                return 0;
+            }
+        }
 
         private void FrmColors_Load(object sender, EventArgs e)
         {
@@ -86,12 +111,15 @@ namespace SuperPaint
                 {
                     int r, g, b;
 
-                    r = (int)Math.Abs(Map(distAngle(thisX, thisY), 0, 360, 255, 0));
-                    g = 0;
+                    b = getB((distAngle(thisX, thisY) + 240) % 360);
+                    g = getG((distAngle(thisX, thisY) + 000) % 360);
+                    r = getR((distAngle(thisX, thisY) + 120) % 360);
+                    
+                    //g = 0;
                     //g = (int)Math.Abs(Map((distAngle(thisX, thisY) - 120) % 360, -120, 240, -255, 255)); ;
                     //g = (int)Map(distAngle(thisX, thisY), 120, 300, 255, 0);
                     //b = (int)Math.Abs(Map(distAngle(thisX, thisY) + 60, 60, 420, -255, 255)); ;
-                    b = 0;
+                    //b = 0;
 
                     chromatic[i] = Color.FromArgb(r, g, b);
                 }
@@ -131,6 +159,11 @@ namespace SuperPaint
         private void picLightColor_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void tmrTick_Tick(object sender, EventArgs e)
+        {
+            //picDrawing.Refresh();
         }
     }
 }

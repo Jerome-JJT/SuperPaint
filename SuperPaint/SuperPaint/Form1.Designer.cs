@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.picDrawing = new System.Windows.Forms.PictureBox();
             this.picPickColor = new System.Windows.Forms.PictureBox();
             this.picLightColor = new System.Windows.Forms.PictureBox();
@@ -36,6 +37,7 @@
             this.lblBlue = new System.Windows.Forms.Label();
             this.lblHexaColor = new System.Windows.Forms.Label();
             this.picShowColor = new System.Windows.Forms.PictureBox();
+            this.tmrTick = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picDrawing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPickColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLightColor)).BeginInit();
@@ -138,6 +140,12 @@
             this.picShowColor.TabStop = false;
             this.picShowColor.Paint += new System.Windows.Forms.PaintEventHandler(this.picShowColor_Paint);
             // 
+            // tmrTick
+            // 
+            this.tmrTick.Enabled = true;
+            this.tmrTick.Interval = 16;
+            this.tmrTick.Tick += new System.EventHandler(this.tmrTick_Tick);
+            // 
             // FrmColors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +184,7 @@
         private System.Windows.Forms.Label lblBlue;
         private System.Windows.Forms.Label lblHexaColor;
         private System.Windows.Forms.PictureBox picShowColor;
+        private System.Windows.Forms.Timer tmrTick;
     }
 }
 
