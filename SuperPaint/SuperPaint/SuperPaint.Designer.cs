@@ -49,13 +49,18 @@
             this.picDrawing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.picDrawing.BackColor = System.Drawing.Color.White;
+            this.picDrawing.BackColor = System.Drawing.Color.Transparent;
+            this.picDrawing.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picDrawing.Location = new System.Drawing.Point(10, 10);
             this.picDrawing.Name = "picDrawing";
             this.picDrawing.Size = new System.Drawing.Size(500, 500);
             this.picDrawing.TabIndex = 0;
             this.picDrawing.TabStop = false;
+            this.picDrawing.Click += new System.EventHandler(this.picDrawing_Click);
             this.picDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.picDrawing_Paint);
+            this.picDrawing.MouseLeave += new System.EventHandler(this.picDrawing_MouseLeave);
+            this.picDrawing.MouseHover += new System.EventHandler(this.picDrawing_MouseHover);
+            this.picDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picDrawing_MouseMove);
             // 
             // picPickColor
             // 
